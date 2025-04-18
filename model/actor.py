@@ -1,3 +1,6 @@
+import torch
+from torch import nn, zeros
+
 class Actor(nn.Module):
     def __init__(self, obs_dim, act_dim, goal_dim, layer_size=1024, latent_dim=256):
         super(Actor, self).__init__()

@@ -1,3 +1,6 @@
+import torch
+from torch import nn, zeros
+
 class Planner(nn.Module):
     def __init__(self, obs_dim, goal_dim, layer_size=2048, latent_dim=256, epsilon=1e-4):
         super(Planner, self).__init__()
