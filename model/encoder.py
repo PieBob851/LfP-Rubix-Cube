@@ -1,5 +1,7 @@
 import torch
 from torch import nn, zeros
+import torch.nn.functional as F
+
 
 class Encoder(nn.Module):
     def __init__(self, enc_in_dim, layer_size=2048, latent_dim=256, epsilon=1e-4):

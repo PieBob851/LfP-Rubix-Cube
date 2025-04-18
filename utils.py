@@ -1,7 +1,8 @@
 import torch.distributions as dist
 import torch.optim as optim
+import torch.nn.functional as F
 
-def train_sample(batch_size, beta, encoder, actor, planner, encoder_optimizer, actor_optimizer, planner_optimizer):
+def train_sample(batch_size, beta, encoder, actor, planner, encoder_optimizer, actor_optimizer, planner_optimizer, data):
     sample = data.sample_batch(batch_size).to(device)
     current_state = sample[:, 0, :-18]
     current_action = sample[:, 0, -18:]
